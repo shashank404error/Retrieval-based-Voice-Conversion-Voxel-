@@ -29,6 +29,32 @@ You can easily extend the voice conversion capabilities by downloading other pre
 3.  Replace the entire /assest directory in this project with the downloaded files.
 5.  Restart the docker application to use the new model.
 
+## Use GPU acceleration using CUDA
+1. Install cuda toolkit
+```
+conda install cudatoolkit=11.8 -c conda-forge
+```
+
+2. Export it to the path
+```
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+```
+
+3. Install cudnn
+```
+conda install -c conda-forge cudnn=8.9.2
+```
+
+4. Export it to the path
+```
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+echo 'export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+```
+
+
+2. Install cudnn
+
+
 ## Reference Projects
 
 *   [ContentVec](https://github.com/auspicious3000/contentvec/)
